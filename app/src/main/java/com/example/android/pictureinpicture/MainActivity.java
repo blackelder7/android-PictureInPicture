@@ -16,6 +16,10 @@
 
 package com.example.android.pictureinpicture;
 
+import com.microsoft.appcenter.AppCenter;
+import com.microsoft.appcenter.analytics.Analytics;
+import com.microsoft.appcenter.crashes.Crashes;
+
 import android.app.PendingIntent;
 import android.app.PictureInPictureParams;
 import android.app.RemoteAction;
@@ -167,6 +171,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        AppCenter.start(getApplication(), "c5fd47ef-3072-466f-b703-19af843b63aa",
+                Analytics.class, Crashes.class);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
